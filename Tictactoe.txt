@@ -117,7 +117,7 @@ class HumanPlayer extends Player{
 	    }while(!isValidMove(row,col));
 	    
 	    LaunchGame.placeMark(row, col, mark);
-	    scan.close();
+	   
 	}
 	
 }
@@ -142,15 +142,18 @@ class AIPlayer extends Player{
 	    }while(!isValidMove(row,col));
 	    
 	    LaunchGame.placeMark(row, col, mark);
+	   
 	}
 
 }
 public class Tictactoe { 
   public static void main(String[] args) {
+	  new LaunchGame();
 	  HumanPlayer p1 = new HumanPlayer("Deva",'X');
 	  AIPlayer p2 = new AIPlayer("CAI",'O');
 	  Player cp;
 	  cp = p1;
+	  LaunchGame.dispBoard();
 	  while(true) 
 	  {
 		  System.out.println(cp.name + " turn ");
@@ -172,6 +175,8 @@ public class Tictactoe {
 				  cp = p1;
 			  }
 		  }
-	  }	  
+	  }
+	 	  
+	  
  }
 }
